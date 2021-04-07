@@ -8,7 +8,10 @@ import "./App.css";
 import HomePage from "./pages/homepage/homepage";
 import ShopPage from "./pages/shop/shop";
 import SignInRegister from "./pages/sign-in-register/sign-in-register";
+import CheckoutPage from "./pages/checkout/checkout";
+
 import Header from "./components/header/header";
+
 import { auth, createUserProfileDoc } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
@@ -54,6 +57,7 @@ class App extends React.Component {
               this.props.currentUser ? <Redirect to="/" /> : <SignInRegister />
             }
           />
+          <Route exact path="/checkout" component={CheckoutPage} />
         </Switch>
       </div>
     );
